@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 public class Skill extends AbstractEntity {
 
-    @ManyToMany(mappedBy = "skills")
+    @ManyToMany (mappedBy = "skills")
     private List<Job> jobs;
 
     @NotBlank(message = "Skill description is required")

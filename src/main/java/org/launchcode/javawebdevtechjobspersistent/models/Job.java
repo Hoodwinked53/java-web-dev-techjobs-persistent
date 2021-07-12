@@ -1,7 +1,7 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
-
-import javax.persistence.*;
 import java.util.ArrayList;
+import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.util.List;
 
 @Entity
@@ -22,7 +22,6 @@ public class Job extends AbstractEntity{
         this.skills = someSkills;
     }
 
-    // Getters and setters.
 
     public Employer getEmployer() {
         return employer;

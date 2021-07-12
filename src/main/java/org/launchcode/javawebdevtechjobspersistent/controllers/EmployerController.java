@@ -19,7 +19,7 @@ public class EmployerController {
     private EmployerRepository employerRepository;
 
     @GetMapping
-    public String displayAllEmployers(Model model) {
+    public String displayAllEmployers(Model model){
         model.addAttribute("title", "All Employers");
         model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
@@ -27,7 +27,6 @@ public class EmployerController {
 
     @GetMapping("add")
     public String displayAddEmployerForm(Model model) {
-        model.addAttribute("title", "Add Employer");
         model.addAttribute(new Employer());
         model.addAttribute("employers", employerRepository.findAll());
         return "employers/add";
@@ -35,12 +34,11 @@ public class EmployerController {
 
     @PostMapping("add")
     public String processAddEmployerForm(@ModelAttribute @Valid Employer newEmployer,
-                                    Errors errors, Model model) {
+                                         Errors errors, Model model) {
 
         if (errors.hasErrors()) {
             return "employers/add";
         }
-
         model.addAttribute(new Employer());
         employerRepository.save(newEmployer);
 
