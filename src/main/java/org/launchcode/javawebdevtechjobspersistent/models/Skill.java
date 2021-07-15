@@ -16,6 +16,10 @@ public class Skill extends AbstractEntity {
     @Size(max = 600, message = "Skill description cannot exceed 600 characters")
     private String description;
 
+    public Skill(String description) {
+        this.description = description;
+    }
+
     public Skill() {}
 
     public List<Job> getJobs() {

@@ -11,11 +11,16 @@ import java.util.List;
 public class Employer extends AbstractEntity {
 
     @OneToMany(mappedBy = "employer")
+    // @JoinColumn
     private List<Job> jobs = new ArrayList<>();
 
     @NotBlank(message = "Job location is required")
     @Size(max = 50 , message = "Max characters for location is 50")
     private String location;
+
+    public Employer(String location) {
+        this.location = location;
+    }
 
     public Employer() {}
 
